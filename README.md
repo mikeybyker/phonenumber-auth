@@ -2,6 +2,7 @@
 
 A sample app showing phone authentication with [Firebase](https://firebase.google.com/docs/auth/web/phone-auth).
 
+[Live](https://mikeybyker.github.io/phonenumber-auth/)
 
 ## Setup
 
