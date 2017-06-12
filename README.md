@@ -6,7 +6,10 @@ A sample app showing phone authentication with [Firebase](https://firebase.googl
 
 ## Setup
 
-Add your firebase config to firebase.config.sample.ts and rename firebase.config.ts
+ - Add your firebase config to firebase.config.sample.ts and rename firebase.config.ts
+ - In the firebase console:
+   - Enable the **Phone** provider under **Sign-In Method**
+   - Add your domain to the **Authorised Domains** list
 
 ## Development server
 
