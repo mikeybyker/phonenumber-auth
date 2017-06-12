@@ -1,0 +1,36 @@
+<div class="row flex justify-content-center">
+  <div class="col-6" *ngIf="!confirmationResult">
+    <div class="card card-login card-inverse">
+      <div class="card-block">
+        <h4 class="card-title">Authorise</h4>
+        <form novalidate [formGroup]="phoneForm" (ngSubmit)="onSubmit(phoneForm)">
+          <div class="form-group" *ngIf="!confirmationResult">
+            <label stacked>Phone Number</label>
+            <input type="text" class="form-control" name="phone" formControlName="phone" />
+            <small class="form-text text-muted">[+][country code][subscriber number including area code]</small>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" id="login" [disabled]="(auth.authenticated$ | async) || phoneForm.invalid">Get Code</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6" *ngIf="confirmationResult">
+    <div class="card card-login card-inverse">
+      <div class="card-block">
+        <h4 class="card-title">Confirmation</h4>
+        <button class="btn btn-link btn-icon" (click)="reset()"><i class="fa fa-undo" aria-hidden="true"> </i></button>
+        <form novalidate [formGroup]="confirmationForm" (ngSubmit)="onConfirmation(confirmationForm)">
+          <div class="form-group">
+            <label stacked>Enter Confirmation Code</label>
+            <input type="text" class="form-control" name="confirmationCode" formControlName="confirmationCode" />
+            <small class="form-text text-muted">SMS should arrive pretty quickly (if your country is supported by Firebase)</small>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="confirmationForm.invalid">Send Code</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</div>

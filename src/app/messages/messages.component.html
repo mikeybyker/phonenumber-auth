@@ -1,0 +1,26 @@
+<div class="row flex">
+  <div class="col">
+
+    <form [formGroup]="userForm" novalidate>
+      <div class="card card-inverse">
+        <div class="card-block">
+          <h4 class="card-title">Message</h4>
+          <div class="form-group">
+            <label stacked>Write a Message to Yourself</label>
+            <input type="text" class="form-control" formControlName="message" />
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
+  <div class="col">
+    <div class="card card-inverse">
+      <div class="card-block">
+        <h4 class="card-title">Your Previous Message</h4>
+        <p class="card-text">{{ (saved$ | async)?.message }}</p>
+      </div>
+    </div>
+  </div>
+
+</div>

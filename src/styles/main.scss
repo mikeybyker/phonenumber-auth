@@ -1,0 +1,90 @@
+$fa-font-path:        "~font-awesome/fonts" !default;
+@import "~font-awesome/scss/font-awesome";
+
+html
+{
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+body
+{
+  padding-top: 3rem;
+  margin-bottom: 60px;
+}
+
+
+.footer
+{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #292b2c;
+  p
+  {
+    margin: 0;
+  }
+  a
+  {
+    color: #fff;
+  }
+}
+
+.info
+{
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.row.flex
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.row.flex > [class*='col-']
+{
+    display: flex;
+    flex-direction: column;
+}
+.row.flex
+{
+    .card
+    {
+      height: 100%;
+    }
+}
+
+.card
+{
+  &.card-inverse
+  {
+    background-color: #333;
+    border-color: #333;
+    .btn-icon:hover
+    {
+      color: #fff;
+    }
+  }
+}
+
+.btn-icon
+{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.sync
+{
+  animation: rotation 1.5s linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-720deg);
+  }
+}
