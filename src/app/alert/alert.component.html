@@ -1,0 +1,8 @@
+<div class="alert alert-danger" role="alert" *ngIf="(errors$ | async).length > 0 ">
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  <div *ngFor="let error of errors$ | async ">
+    {{ error }}
+  </div>
+</div>

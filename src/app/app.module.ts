@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -16,13 +17,16 @@ import {
 } from './services';
 import { LoginComponent } from './login/login.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AlertComponent } from './alert/alert.component';
+import { AlertService } from './services/alert.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MessagesComponent,
-    TruncatePipe
+    TruncatePipe,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,8 @@ import { MessagesComponent } from './messages/messages.component';
   ],
   providers: [
     AuthService,
-    TruncatePipe
+    TruncatePipe,
+    AlertService
   ],
   bootstrap: [AppComponent]
 })

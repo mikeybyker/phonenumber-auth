@@ -9,6 +9,7 @@ import * as firebase from 'firebase/app';
 
 import { AuthService } from 'app/services';
 import { PhoneAuth } from './PhoneAuth';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'login',
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
   confirmationForm: FormGroup;
   confirmationResult: firebase.auth.ConfirmationResult;
 
-  constructor(public auth: AuthService, private fb: FormBuilder) { }
+  constructor(public auth: AuthService, private fb: FormBuilder, private alertService: AlertService, ) { }
 
   ngOnInit() {
     this.buildForms();
@@ -51,6 +52,7 @@ export class LoginComponent implements OnInit {
     } catch (error) {
       console.log('Sign in error ::: ', error);
       this.auth.logout();
+      this.alertService.error(error.message || `Sorry, there's been an error :-(`);
     }
   }
 

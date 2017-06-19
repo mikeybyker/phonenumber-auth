@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -10,6 +13,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/database';
 
 import { AuthService, TruncatePipe } from 'app/services';
+import { AlertService } from '../services/alert.service';
 
 interface Saved {
   message: string;
@@ -33,7 +37,7 @@ export class MessagesComponent implements OnInit {
     message: new FormControl()
   });
 
-  constructor(public auth: AuthService, public truncate: TruncatePipe) { }
+  constructor(public auth: AuthService, private alertService: AlertService, public truncate: TruncatePipe) { }
 
   ngOnInit() {
     console.log('init');
@@ -73,7 +77,8 @@ export class MessagesComponent implements OnInit {
       await this.userReference.update({ message });
     } catch (error) {
       // Do something...
-      console.log('Error saving message: ', error);
+      console.error('Error saving message: ', error);
+      this.alertService.error('Error saving message :-(');
     }
   }
 
@@ -85,6 +90,7 @@ export class MessagesComponent implements OnInit {
     } catch (error) {
       // Do something...
       console.error('Ah snap: ', error);
+      this.alertService.error('Ah snap');
     }
   }
 
