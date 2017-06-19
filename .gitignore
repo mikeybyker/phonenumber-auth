@@ -41,4 +41,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-firebase.config.ts
+firebase.ts
+firebase.prod.ts

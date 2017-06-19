@@ -10,7 +10,8 @@ import * as firebase from 'firebase/app';
 
 import { AuthService } from './services/authService';
 import { TruncatePipe } from './services/truncate';
-import { config } from './firebase.config';
+
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,7 @@ export class AppComponent {
   constructor(public auth: AuthService) { }
 
   ngOnInit() {
-    firebase.initializeApp(config);
+    firebase.initializeApp(environment.firebase);
     this.auth.checkAuthState();
   }
 

@@ -1,4 +1,4 @@
-export const config = {
+export const firebase = {
   apiKey: 'KEY',
   authDomain: 'DOMAIN',
   databaseURL: 'URL',
