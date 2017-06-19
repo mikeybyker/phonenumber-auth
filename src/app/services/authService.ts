@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 
 interface User {
   uid: string;

@@ -5,7 +5,7 @@ import {
   FormBuilder
 } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 import { Subscription } from 'rxjs/Subscription';
 
 import { AuthService, TruncatePipe } from 'app/services';

@@ -6,7 +6,7 @@ import {
   Validators
 } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 
 import { AuthService } from './services/authService';
 import { TruncatePipe } from './services/truncate';

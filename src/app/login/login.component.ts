@@ -5,7 +5,7 @@ import {
   Validators
 } from '@angular/forms';
 
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 
 import { AuthService } from 'app/services';
 import { PhoneAuth } from './PhoneAuth';
